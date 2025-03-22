@@ -12,7 +12,7 @@ int main(void){
     string filename = "data.txt";
     ifstream ifs(filename);
     ofstream file("result.txt");
-    double contatore = 1.0;
+    int contatore = 1;
     long double somma_numeri;
     
 
@@ -23,14 +23,14 @@ int main(void){
             long double numero;
             ifs >> numero;
             numero = mappa(numero);
-            if(contatore == 1.0){
-                file << numero << endl;
+            if(contatore == 1){
+                file << contatore << ' ' << numero << endl;
                 somma_numeri = numero;
             }else{
                 somma_numeri = somma_numeri + numero;
-                file << somma_numeri/contatore << endl;
+                file << contatore << ' ' << somma_numeri/contatore << endl;
             }
-            contatore = contatore + 1.0;
+            contatore = contatore + 1;
         }
     }
     file.close();
